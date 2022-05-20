@@ -1,0 +1,81 @@
+/*resetando body*/
+
+body{
+    margin: 0;
+    border: 0;
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(99, 99, 99);
+}
+
+
+/*estilizando titulo checkbox na tag h1*/
+h1{
+    color: rgba(245, 213, 33, 0.856);
+    font-family: 'Secular One', sans-serif;
+    letter-spacing: 4px;
+    position: relative;
+    right: 580px;
+    bottom: 200px;
+    cursor: pointer;
+   
+}
+
+h1:hover{
+    color: rgba(231, 202, 34, 0.637)
+}
+
+
+/*nao permitindo aparecer o quadrado do checkbox*/
+input[type = "checkbox"]{
+    display: none;
+}
+
+/*
+estilizando o corpo do checkbox
+*/
+.check{
+    background-color: rgb(58, 58, 58);
+    width: 120px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    transition: 0.5s ease-out;
+    
+    align-items: center;
+    
+}
+
+/*
+estilizando efeito quando checkbox pressionado
+*/
+input[type="checkbox"]:checked ~ .check{
+    box-shadow: 0 0 0 1200px rgb(58, 58, 58);
+    background-color: rgba(245, 213, 33, 0.856);
+}
+
+
+/*
+estilizando circulo(dourado) do checkbox
+*/
+.check::after{
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: rgba(245, 213, 33, 0.856);
+    display: block;
+    position: absolute;
+    border-radius: 100px;
+    transition: 0.5s;
+    transform: translateX(0px);
+}
+
+/*
+estilizando circulo quando checkbox for pressionado
+*/
+input[type="checkbox"]:checked ~ .check::after{
+    transform: translatex(70px);
+    background-color: white
+}
